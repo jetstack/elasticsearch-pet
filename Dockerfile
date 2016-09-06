@@ -1,6 +1,7 @@
-FROM fabric8/elasticsearch-k8s:2.3.4
+FROM elasticsearch:2.3.5
 
 RUN bin/plugin install lmenezes/elasticsearch-kopf/v2.1.2
+RUN bin/plugin install io.fabric8/elasticsearch-cloud-kubernetes/2.3.5
 
 RUN apt-get update && apt-get install -y \
     jq \
