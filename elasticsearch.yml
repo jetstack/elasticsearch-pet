@@ -1,8 +1,10 @@
-node.data: ${NODE_DATA}
-node.master: ${NODE_MASTER}
-node.name: ${HOSTNAME}
+node:
+  data: ${NODE_DATA}
+  master: ${NODE_MASTER}
+  name: ${HOSTNAME}
 
-bootstrap.mlockall: ${BOOTSTRAP_MLOCKALL}
+bootstrap:
+  memory_lock: ${BOOTSTRAP_MEMORY_LOCK}
 
 network.host: 0.0.0.0
 
@@ -12,7 +14,6 @@ cloud:
     namespace: ${KUBERNETES_NAMESPACE}
 
 discovery:
-  type: kubernetes
-
-path:
-  plugins: /usr/share/elasticsearch/plugins
+  zen:
+    minimum_master_nodes: ${NUMBER_OF_MASTERS}
+    hosts_provider: kubernetes

@@ -1,9 +1,8 @@
-FROM elasticsearch:2.4.0
+FROM elasticsearch:5.5.0
 
-RUN bin/plugin install lmenezes/elasticsearch-kopf/v2.1.2
-RUN bin/plugin install io.fabric8/elasticsearch-cloud-kubernetes/2.4.0_01
+RUN bin/elasticsearch-plugin install io.fabric8:elasticsearch-cloud-kubernetes:5.5.0
 
-ENV BOOTSTRAP_MLOCKALL=false NODE_DATA=true NODE_MASTER=true JAVA_OPTS=-Djava.net.preferIPv4Stack=true
+ENV BOOTSTRAP_MEMORY_LOCK=false NODE_DATA=true NODE_MASTER=true NUMBER_OF_MASTERS=1 ES_JAVA_OPTS=-Djava.net.preferIPv4Stack=true
 
 # pre-stop-hook.sh and dependencies
 RUN apt-get update && apt-get install -y \

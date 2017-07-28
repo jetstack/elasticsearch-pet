@@ -7,5 +7,4 @@ This image is using Fabric8's great work around the [kubernetes plugin](https://
 ## Changes for PetSet
 
 - Use Pod's hostname as elasticsearch host name
-- Add [kopf](https://github.com/lmenezes/elasticsearch-kopf) plugin as elasticsearch UI
 - Handle downscales so that no data loss occurs (using lifecycle hooks)
