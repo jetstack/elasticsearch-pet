@@ -15,5 +15,5 @@ cloud:
 
 discovery:
   zen:
-    minimum_master_nodes: ${NUMBER_OF_MASTERS}
+    minimum_master_nodes: ${MINIMUM_MASTER_NODES}
     hosts_provider: kubernetes
